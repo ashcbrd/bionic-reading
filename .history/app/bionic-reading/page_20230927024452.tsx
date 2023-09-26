@@ -1,0 +1,3 @@
+const BioreaderPage = () => {
+  return <>bioreader</>;
+};
