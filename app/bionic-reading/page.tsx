@@ -39,7 +39,7 @@ const MainPage = () => {
       {isLoading && !bionicContent ? (
         <Loading />
       ) : (
-        <div className="flex w-screen justify-center flex-col items-center gap-y-6 h-full mt-28">
+        <div className="flex w-full justify-center flex-col items-center gap-y-6 h-full screen">
           {bionicContent.length <= 0 && !isLoading ? (
             <>
               <div className="flex flex-col gap-y-3">
@@ -67,6 +67,7 @@ const MainPage = () => {
                 <input
                   className="px-4 py-2 bg-gradient-to-tr from-red-500 to-yellow-500 rounded-md w-full"
                   type="submit"
+                  value="Convert"
                 />
               </form>
             </>
