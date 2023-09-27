@@ -52,7 +52,12 @@ export default function Home() {
       <motion.div
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 2, type: "spring", stiffness: 200 }}
+        transition={{
+          delay: 2,
+          duration: 0.05,
+          type: "spring",
+          stiffness: 100,
+        }}
       >
         <Card />
       </motion.div>

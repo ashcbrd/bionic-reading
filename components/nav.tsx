@@ -17,7 +17,7 @@ const Nav = () => {
     <div className="flex w-screen py-6 px-12 items-center justify-between">
       <a
         href="/"
-        className="cursor-pointer text-transparent bg-clip-text bg-gradient-to-tr from-red-500 to-yellow-500 text-2xl font-bold"
+        className="cursor-pointer text-transparent bg-clip-text bg-gradient-to-tr from-red-500 to-yellow-500 text-2xl font-black"
       >
         BioReader+
       </a>
