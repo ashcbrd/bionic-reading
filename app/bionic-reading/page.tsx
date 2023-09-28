@@ -86,7 +86,7 @@ const BionicReadingComponent: React.FC = () => {
           ) : (
             <div
               className={cn(
-                "bg-white text-gray-800 w-5/6 p-24 rounded font-[400] text-2xl"
+                "bg-white text-gray-800 w-5/6 p-24 rounded font-[400] text-xl"
               )}
             >
               {bionicText}

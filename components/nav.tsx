@@ -83,9 +83,12 @@ const Nav = () => {
       </div>
       <div className="flex items-center gap-x-3">
         {pathname === "/" ? (
-          <div className="bg-gradient-to-tr from-red-500 to-yellow-500 text-white cursor-pointer flex text-sm items-center dark:text-white hover:bg-white hover:opacity-75 transition h-max w-max py-1 px-3 rounded-xl">
-            <a href="/bionic-reading">Get Started</a>
-          </div>
+          <a
+            href="/bionic-reading"
+            className="bg-gradient-to-tr from-red-500 to-yellow-500 text-white cursor-pointer flex text-sm items-center dark:text-white hover:bg-white hover:opacity-75 transition h-max w-max py-1 px-3 rounded-xl"
+          >
+            <span>Get Started</span>
+          </a>
         ) : (
           ""
         )}
