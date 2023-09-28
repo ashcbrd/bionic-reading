@@ -36,7 +36,7 @@ const HeroSection = () => {
             initial={{ x: 50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 1, duration: 1 }}
-            className="text-white/70"
+            className="dark:text-white/70"
           >
             Stay In the Loop: Subscribe for Exclusive Updates and New Features!
           </motion.p>

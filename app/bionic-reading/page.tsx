@@ -1,46 +1,63 @@
 "use client";
 
 import Loading from "@/components/loading";
-import { Suspense, useState } from "react";
+import { useState, Fragment } from "react";
 
-const MainPage = () => {
-  const [content, setContent] = useState<string>("");
-  const [bionicContent, setBionicContent] = useState<string>("");
+const BionicReadingComponent: React.FC = () => {
+  const [inputText, setInputText] = useState<string>("");
+  const [bionicText, setBionicText] = useState<JSX.Element | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const url = "https://bionic-reading1.p.rapidapi.com/convert";
-  const options = {
-    method: "POST",
-    headers: {
-      "content-type": "application/x-www-form-urlencoded",
-      "X-RapidAPI-Key": "5e717fcff2msh8fc4a3779dbbac6p17c914jsn2b19419b1257",
-      "X-RapidAPI-Host": "bionic-reading1.p.rapidapi.com",
-    },
-    body: new URLSearchParams({
-      content: content,
-      response_type: "html",
-      request_type: "html",
-      fixation: "1",
-      saccade: "10",
-    }),
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setInputText(event.target.value);
   };
 
-  async function read() {
-    try {
-      const response = await fetch(url, options);
-      const result = await response.text();
-      setBionicContent(result);
-    } catch (err) {
-      console.log("error:", err); // Error! Handle appropriately.
-    }
-  }
+  const processForBionicReading = (text: string): JSX.Element | null => {
+    if (!text) return null;
+
+    const lines = text.split("\n");
+    const bionicLines = lines.map((line, lineIndex) => {
+      const words = line.split(" ");
+      const bionicWords = words.map((word, wordIndex) => {
+        const numBoldLetters = Math.ceil(word.length / 2);
+        const boldPart = word.substring(0, numBoldLetters);
+        const remainingPart = word.substring(numBoldLetters);
+
+        return (
+          <Fragment key={wordIndex}>
+            <b>{boldPart}</b>
+            {remainingPart}{" "}
+          </Fragment>
+        );
+      });
+
+      return (
+        <div key={lineIndex}>
+          {bionicWords}
+          <br />
+        </div>
+      );
+    });
+
+    return <div>{bionicLines}</div>;
+  };
+
+  const handleConvert = () => {
+    const processedText = processForBionicReading(inputText);
+    setIsLoading(true);
+    setTimeout(() => {
+      setBionicText(processedText);
+    }, 1000);
+    if (bionicText) setIsLoading(false);
+  };
 
   return (
     <>
-      {isLoading && !bionicContent ? (
+      {isLoading && !bionicText ? (
         <Loading />
       ) : (
-        <div className="flex w-full justify-center flex-col items-center gap-y-6 h-screen">
-          {bionicContent.length <= 0 && !isLoading ? (
+        <div className="flex w-full justify-center flex-col min-h-screen items-center gap-y-6 h-max py-10">
+          {!bionicText ? (
             <>
               <div className="flex flex-col gap-y-3">
                 <p className="w-[800px] text-transparent text-center text-3xl font-bold bg-clip-text bg-gradient-to-tr from-red-500 to-yellow-500">
@@ -50,32 +67,25 @@ const MainPage = () => {
                   Paste your text and absorb information faster and better!
                 </p>
               </div>
-              <form
-                className="flex flex-col items-center jusify-center gap-y-4"
-                onSubmit={async (e) => {
-                  e.preventDefault();
-                  setIsLoading(true);
-                  read();
-                }}
-              >
+              <div className="flex flex-col items-center jusify-center gap-y-4">
                 <textarea
                   className="bg-[#1b1b1b] p-4 rounded-md w-[600px] h-[200px]"
-                  onChange={(e) => {
-                    setContent(e.target.value);
-                  }}
+                  value={inputText}
+                  // @ts-expect-error
+                  onChange={handleInputChange}
                 />
-                <input
+                <button
+                  onClick={handleConvert}
                   className="px-4 py-2 bg-gradient-to-tr from-red-500 to-yellow-500 rounded-md w-full"
-                  type="submit"
-                  value="Convert"
-                />
-              </form>
+                >
+                  Convert
+                </button>
+              </div>
             </>
           ) : (
-            <p
-              className="bg-white text-gray-800 w-5/6 p-12 rounded font-semibold text-2xl"
-              dangerouslySetInnerHTML={{ __html: bionicContent }}
-            />
+            <div className="bg-white text-gray-800 w-5/6 p-12 rounded font-semibold text-2xl">
+              {bionicText}
+            </div>
           )}
         </div>
       )}
@@ -83,4 +93,4 @@ const MainPage = () => {
   );
 };
 
-export default MainPage;
+export default BionicReadingComponent;

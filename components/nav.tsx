@@ -12,6 +12,9 @@ import { cn } from "@/lib/utils";
 const Nav = () => {
   const [isAtTop, setIsAtTop] = useState(true);
 
+  const router = useRouter();
+  const pathname = usePathname();
+
   useEffect(() => {
     const handleScroll = () => {
       setIsAtTop(window.scrollY === 0);
@@ -38,11 +41,21 @@ const Nav = () => {
     { href: "//#about", name: "About" },
     { href: "//#guide", name: "User Guide" },
   ];
-  const pathname = usePathname();
 
   return (
     <div className="z-50 fixed flex w-screen py-6 px-12 items-center justify-between">
-      <p onClick={() => scrollTo()} className="cursor-pointer flex">
+      <p
+        onClick={() => {
+          if (pathname !== "/") {
+            router.push("/");
+          }
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        }}
+        className="cursor-pointer flex"
+      >
         <Logo size={60} />
         <span className="-ml-5 text-transparent bg-clip-text bg-gradient-to-tr from-red-500 to-yellow-500 text-2xl font-bold">
           BioReader
