@@ -33,7 +33,7 @@ export default function RootLayout({
       <body className="hidden md:flex flex-col relative overflow-x-hidden">
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
