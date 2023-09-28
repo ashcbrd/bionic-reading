@@ -1,10 +1,10 @@
-import Nav from "@/components/nav";
-import "@/styles/globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import Footer from "@/components/footer";
+import Image from "next/image";
 
-const inter = Inter({ subsets: ["latin"] });
+import Nav from "@/components/nav";
+import { ThemeProvider } from "@/components/theme-provider";
+import "@/styles/globals.css";
+import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
   title: "Boireader",
@@ -18,12 +18,26 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="relative h-max w-screen overflow-x-hidden">
-        <Nav />
-        <div className="w-full pt-24 h-max bg-none z-50">{children}</div>
-        {/* <Footer /> */}
-        {/* <div className="w-screen h-screen absolute top-0 left-0 bg-pattern z-0" /> */}
-      </body>
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange
+      >
+        <body className="hidden md:flex flex-col relative overflow-x-hidden">
+          <Nav />
+          <div>{children}</div>
+          <Footer />
+        </body>
+      </ThemeProvider>
+      {/* <div className="flex flex-col gap-y-10 md:hidden px-14 justify-center items-center w-screen h-screen">
+        <Image src="/logo.png" width={200} height={200} alt="logo" />
+
+        <p className="font-bold text-xl tracking-wider text-transparent bg-clip-text bg-gradient-to-tr from-red-500 to-yellow-500">
+          Apologies, our website isn&apos;t fully mobile-friendly yet. For the
+          best experience, try it on desktop or laptop.
+        </p>
+      </div> */}
     </html>
   );
 }

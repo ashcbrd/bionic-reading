@@ -39,7 +39,7 @@ const MainPage = () => {
       {isLoading && !bionicContent ? (
         <Loading />
       ) : (
-        <div className="flex w-full justify-center flex-col items-center gap-y-6 h-full screen">
+        <div className="flex w-full justify-center flex-col items-center gap-y-6 h-screen">
           {bionicContent.length <= 0 && !isLoading ? (
             <>
               <div className="flex flex-col gap-y-3">

@@ -13,7 +13,7 @@ const Hero = () => {
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1 }}
-            className="font-bold text-8xl text-transparent bg-clip-text bg-gradient-to-tr from-red-500 to-yellow-500"
+            className="font-black text-8xl text-transparent bg-clip-text bg-gradient-to-tr from-red-500 to-yellow-500"
           >
             Empower Your Mind
           </motion.p>
@@ -21,13 +21,14 @@ const Hero = () => {
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.7, duration: 1 }}
-            className="text-5xl text-white font-semibold"
+            className="text-5xl text-primary dark:text-stone-100 tracking-wide font-semibold"
           >
-            Bio<span className="font-[300] opacity-60">nic</span> Read
+            {/* Bio<span className="font-[300] opacity-60">nic</span> Read
             <span className="font-[300] opacity-60">ing</span> f
             <span className="font-[300] opacity-60">or</span> a Dig
             <span className="font-[300] opacity-60">ital</span> A
-            <span className="font-[300] opacity-60">ge</span>
+            <span className="font-[300] opacity-60">ge</span> */}
+            Bionic Reading for a Digital Age
           </motion.p>
         </div>
         <div className="gap-y-4 flex flex-col">
@@ -48,9 +49,9 @@ const Hero = () => {
             <input
               type="text"
               placeholder="Enter email"
-              className="w-full bg-white/10 backdrop-blur-md rounded-md p-2"
+              className="w-full border border-orange-500 dark:border-none dark:bg-white/10 backdrop-blur-md rounded-md p-2"
             />
-            <button className="bg-gradient-to-tr from-red-500 to-yellow-500 px-3 rounded-md">
+            <button className="text-white bg-gradient-to-tr from-red-500 to-yellow-500 px-3 rounded-md">
               Subscribe
             </button>
           </motion.div>
