@@ -70,14 +70,14 @@ const BionicReadingComponent: React.FC = () => {
               </div>
               <div className="flex flex-col items-center jusify-center gap-y-4">
                 <textarea
-                  className="bg-[#1b1b1b] p-4 rounded-md w-[600px] h-[200px]"
+                  className="dark:bg-[#1b1b1b] border-orange-400/80 border p-4 rounded-md w-[600px] h-[200px]"
                   value={inputText}
                   // @ts-expect-error
                   onChange={handleInputChange}
                 />
                 <button
                   onClick={handleConvert}
-                  className="px-4 py-2 bg-gradient-to-tr from-red-500 to-yellow-500 rounded-md w-full"
+                  className="px-4 py-2 bg-gradient-to-tr text-white from-red-500 to-yellow-500 rounded-md w-full"
                 >
                   Convert
                 </button>
