@@ -10,6 +10,18 @@ export const metadata: Metadata = {
   title: "Bioreader",
   description:
     "Welcome to [Application Name], a revolutionary Bionic Reading app that harmonizes cutting-edge technology with your cognitive processes, optimizing reading flow and enhancing comprehension. Experience effortless and personalized reading, tailored to your comfort.",
+  keywords: [
+    "Bionic Reading",
+    "Reading",
+    "Efficient Reading",
+    "Speed Reading",
+    "Chunking",
+    "Scanning",
+    "Reading Techniques",
+  ],
+  openGraph: {
+    images: "/og_image.png",
+  },
 };
 
 export default function RootLayout({
