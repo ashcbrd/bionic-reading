@@ -1,36 +1,26 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Bioreader - A Web App for Bionic Reading
 
-## Getting Started
+Bioreader is a revolutionary web app designed to enhance reading capabilities through bionic reading techniques. This application empowers users to optimize their reading speed, comprehension, and overall reading experience.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 1. Speed Reading
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Utilize bionic reading techniques to increase reading speed and efficiency.
+- Adjustable reading speed to cater to individual preferences and comfort levels.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 2. Comprehension Enhancement
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Enhance comprehension through guided techniques for focused and efficient reading.
+- Interactive exercises to reinforce understanding and retention.
 
-## Learn More
+### 3. Personalized Settings
 
-To learn more about Next.js, take a look at the following resources:
+- Tailor the app to your preferences with customizable themes, fonts, and layouts.
+- Save progress and settings for a personalized user experience.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 4. Progress Tracking
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Track reading progress to visualize improvements in reading speed.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<img src="https://github.com/ashcbrd/bionic-reading/assets/67548363/fd87d4a7-edb6-4e74-bbfc-cc4a0344040d"/>
