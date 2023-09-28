@@ -2,7 +2,7 @@ const AboutSection = () => {
   return (
     <div
       id="about"
-      className="h-max w-screen px-32 py-10 flex flex-col gap-y-10"
+      className="h-max w-screen px-32 py-10 flex flex-col gap-y-10 z-10"
     >
       <div>
         <h1 className="text-5xl font-bold text-transparent bg-gradient-to-tr bg-clip-text from-red-500 to-yellow-500">

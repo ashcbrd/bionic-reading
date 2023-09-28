@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { motion } from "framer-motion";
 
 const HeroSection = () => {
@@ -6,7 +5,7 @@ const HeroSection = () => {
     <div className="h-max pb-32">
       <section
         id="hero"
-        className="w-full h-max flex items-center justify-center flex-col gap-y-10 mt-12"
+        className="w-full h-max flex items-center justify-center flex-col gap-y-10 mt-12 z-10 relative"
       >
         <div className="flex flex-col justify-center items-center gap-y-2">
           <motion.p
@@ -81,8 +80,8 @@ const Card = () => {
         <i className="text-black"> - Anthony Trollope</i>
       </div>
       <div className="h-[340px] w-[640px] z-30 border border-orange-500/30 rounded-3xl bg-[#555]/30 backdrop-blur-xl absolute top-0" />
-      <div className="z-0 absolute top-0 left-0 bg-gradient-to-r from-red-500 to-yellow-500 h-[80%] w-[80%] rounded-xl -translate-x-[100px] rotate-[-10deg] translate-y-20" />
-      <div className="z-0 absolute top-0 right-0 bg-gradient-to-r from-orange-500 to-yellow-500  h-[80%] w-[80%] rounded-xl translate-x-[100px] rotate-[10deg] translate-y-20" />
+      <div className="z-0 absolute top-0 left-0 bg-gradient-to-r from-red-500 to-yellow-500 shadow-lg h-[80%] w-[80%] rounded-xl -translate-x-[100px] rotate-[-10deg] translate-y-20" />
+      <div className="z-0 absolute top-0 right-0 bg-gradient-to-r from-orange-500 to-yellow-500  shadow-lg h-[80%] w-[80%] rounded-xl translate-x-[100px] rotate-[10deg] translate-y-20" />
     </div>
   );
 };

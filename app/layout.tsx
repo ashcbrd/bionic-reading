@@ -4,7 +4,6 @@ import Nav from "@/components/nav";
 import { ThemeProvider } from "@/components/theme-provider";
 import "@/styles/globals.css";
 import Footer from "@/components/footer";
-import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Bioreader",
@@ -34,7 +33,7 @@ export default function RootLayout({
       <body className="hidden md:flex flex-col relative overflow-x-hidden">
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >

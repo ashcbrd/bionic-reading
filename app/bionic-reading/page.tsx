@@ -70,7 +70,7 @@ const BionicReadingComponent: React.FC = () => {
               </div>
               <div className="flex flex-col items-center jusify-center gap-y-4">
                 <textarea
-                  className="dark:bg-[#1b1b1b] border-orange-400/80 border p-4 rounded-md w-[600px] h-[200px]"
+                  className="dark:bg-[#1b1b1b] backdrop-blur-lg border-orange-400/80 border p-4 rounded-md w-[600px] h-[200px]"
                   value={inputText}
                   // @ts-expect-error
                   onChange={handleInputChange}
