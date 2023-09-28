@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-const Hero = () => {
+const HeroSection = () => {
   return (
     <div className="h-max pb-32">
       <section
@@ -96,4 +96,4 @@ const R = ({ children }: { children: React.ReactNode }) => {
   return <span className="font-[300] opacity-70">{children}</span>;
 };
 
-export default Hero;
+export default HeroSection;

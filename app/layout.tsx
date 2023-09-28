@@ -18,18 +18,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <ThemeProvider
-        attribute="class"
-        defaultTheme="system"
-        enableSystem
-        disableTransitionOnChange
-      >
-        <body className="hidden md:flex flex-col relative overflow-x-hidden">
+      <body className="hidden md:flex flex-col relative overflow-x-hidden">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
           <Nav />
           <div>{children}</div>
           <Footer />
-        </body>
-      </ThemeProvider>
+        </ThemeProvider>
+      </body>
       {/* <div className="flex flex-col gap-y-10 md:hidden px-14 justify-center items-center w-screen h-screen">
         <Image src="/logo.png" width={200} height={200} alt="logo" />
 
