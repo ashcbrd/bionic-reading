@@ -57,7 +57,7 @@ const BionicReadingComponent: React.FC = () => {
       {isLoading && !bionicText ? (
         <Loading />
       ) : (
-        <div className="flex w-full justify-center flex-col min-h-screen items-center gap-y-6 h-max py-40">
+        <div className="flex w-full justify-center flex-col min-h-screen items-center gap-y-6 h-max">
           {!bionicText ? (
             <>
               <div className="flex flex-col gap-y-3">
