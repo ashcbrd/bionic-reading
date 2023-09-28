@@ -1,6 +1,7 @@
 "use client";
 
 import Loading from "@/components/loading";
+import { cn } from "@/lib/utils";
 import { useState, Fragment } from "react";
 
 const BionicReadingComponent: React.FC = () => {
@@ -26,7 +27,7 @@ const BionicReadingComponent: React.FC = () => {
         return (
           <Fragment key={wordIndex}>
             <b>{boldPart}</b>
-            {remainingPart}{" "}
+            <span className="opacity-80">{remainingPart}</span>{" "}
           </Fragment>
         );
       });
@@ -56,7 +57,7 @@ const BionicReadingComponent: React.FC = () => {
       {isLoading && !bionicText ? (
         <Loading />
       ) : (
-        <div className="flex w-full justify-center flex-col min-h-screen items-center gap-y-6 h-max py-10">
+        <div className="flex w-full justify-center flex-col min-h-screen items-center gap-y-6 h-max py-40">
           {!bionicText ? (
             <>
               <div className="flex flex-col gap-y-3">
@@ -83,7 +84,11 @@ const BionicReadingComponent: React.FC = () => {
               </div>
             </>
           ) : (
-            <div className="bg-white text-gray-800 w-5/6 p-12 rounded font-semibold text-2xl">
+            <div
+              className={cn(
+                "bg-white text-gray-800 w-5/6 p-24 rounded font-[400] text-2xl"
+              )}
+            >
               {bionicText}
             </div>
           )}

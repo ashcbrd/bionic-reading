@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 
 import Nav from "@/components/nav";
 import { ThemeProvider } from "@/components/theme-provider";
 import "@/styles/globals.css";
 import Footer from "@/components/footer";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Bioreader",
