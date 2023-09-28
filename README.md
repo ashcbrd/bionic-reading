@@ -19,8 +19,4 @@ Bioreader is a revolutionary web app designed to enhance reading capabilities th
 - Tailor the app to your preferences with customizable themes, fonts, and layouts.
 - Save progress and settings for a personalized user experience.
 
-### 4. Progress Tracking
-
-- Track reading progress to visualize improvements in reading speed.
-
 <img src="https://github.com/ashcbrd/bionic-reading/assets/67548363/fd87d4a7-edb6-4e74-bbfc-cc4a0344040d"/>
