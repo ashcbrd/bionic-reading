@@ -23,11 +23,6 @@ const HeroSection = () => {
             transition={{ delay: 0.7, duration: 1 }}
             className="text-5xl text-primary dark:text-stone-100 tracking-wide font-semibold"
           >
-            {/* Bio<span className="font-[300] opacity-60">nic</span> Read
-            <span className="font-[300] opacity-60">ing</span> f
-            <span className="font-[300] opacity-60">or</span> a Dig
-            <span className="font-[300] opacity-60">ital</span> A
-            <span className="font-[300] opacity-60">ge</span> */}
             Bionic Reading for a Digital Age
           </motion.p>
         </div>
@@ -76,7 +71,7 @@ const HeroSection = () => {
 const Card = () => {
   return (
     <div className="relative">
-      <div className="h-[340px] w-[640px] z-40 rounded-3xl bg-[#555]/10 relative flex items-center justify-center flex-col gap-y-5 p-10">
+      <div className="h-[340px] w-[640px] z-40 rounded-3xl bg-white border shadow-xl dark:border-none border-orange-400 dark:bg-[#555]/10 relative flex items-center justify-center flex-col gap-y-5 p-10">
         <p className="text-2xl tracking-wide text-center font-semibold">
           &quot;Th<R>e</R> hab<R>it</R> o<R>f</R> read<R>ing</R> i<R>s</R> th
           <R>e</R> onl<R>y</R> enjoyme<R>nt</R> i<R>n</R> whi<R>ch</R> the

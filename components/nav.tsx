@@ -43,7 +43,7 @@ const Nav = () => {
   ];
 
   return (
-    <div className="z-50 fixed flex w-screen py-6 px-12 items-center justify-between">
+    <div className="z-50 relavite flex w-screen py-6 px-12 items-center justify-between">
       <p
         onClick={() => {
           if (pathname !== "/") {
@@ -66,7 +66,7 @@ const Nav = () => {
           "transition-all duration-300",
           isAtTop
             ? "absolute right-0 left-0 m-auto w-max flex gap-x-32 text-md"
-            : "absolute right-0 left-0 m-auto w-max flex gap-x-10 dark:bg-white/10 backdrop-blur-sm text-sm py-4 px-6 rounded-full shadow-md border border-slate-200/50 "
+            : "absolute right-0 left-0 m-auto w-max flex gap-x-10 bg-gradient-to-tr from-red-500 to-yellow-500 dark:bg-white/10 backdrop-blur-sm text-sm py-4 px-6 rounded-full shadow-md dark:border text-white border-slate-200/50 dark:from-transparent dark:to-transparent fixed"
         )}
       >
         {links.map((link) => {
