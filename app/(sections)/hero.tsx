@@ -12,7 +12,7 @@ const HeroSection = () => {
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1 }}
-            className="font-black text-8xl text-transparent bg-clip-text bg-gradient-to-tr from-red-500 to-yellow-500"
+            className="font-bold text-7xl text-transparent bg-clip-text bg-gradient-to-tr from-red-500 to-yellow-500"
           >
             Empower Your Mind
           </motion.p>
@@ -20,7 +20,7 @@ const HeroSection = () => {
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.7, duration: 1 }}
-            className="text-5xl text-primary dark:text-stone-100 tracking-wide font-semibold"
+            className="text-4xl text-primary dark:text-stone-100 tracking-wide font-semibold"
           >
             Bionic Reading for a Digital Age
           </motion.p>
