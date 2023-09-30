@@ -66,7 +66,7 @@ const Nav = () => {
           "transition-all duration-300 absolute",
           isAtTop
             ? "right-0 left-0 m-auto w-max flex gap-x-32 text-md"
-            : " right-0 left-0 m-auto w-max flex gap-x-10 bg-white/10 backdrop-blur-sm text-sm py-4 px-6 rounded-full shadow-md border border-orange-300/50 dark:border-slate-200/50 dark:from-transparent dark:to-transparent fixed"
+            : " right-0 left-0 m-auto w-max flex gap-x-10 bg-white/10 backdrop-blur-sm text-sm py-4 px-6 rounded-full shadow-md border border-slate-200/50 dark:from-transparent dark:to-transparent fixed"
         )}
       >
         {links.map((link) => {

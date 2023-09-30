@@ -72,6 +72,7 @@ const BionicReadingComponent: React.FC = () => {
                 <textarea
                   className="dark:bg-[#1b1b1b] backdrop-blur-lg border-orange-400/80 border p-4 rounded-md w-[600px] h-[200px]"
                   value={inputText}
+                  cols={20}
                   // @ts-expect-error
                   onChange={handleInputChange}
                 />
