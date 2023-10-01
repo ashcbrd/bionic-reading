@@ -10,7 +10,7 @@ const AboutSection = () => {
           <br /> Bionic Intelligence
         </h1>
       </div>
-      <div className="flex flex-col w-full gap-y-4 justify-end items-end">
+      <div className="flex flex-col w-full gap-y-4 items-start">
         <p className="text-xl leading-8 text-primary dark:text-stone-200">
           Welcome to BioReader, where we revolutionize the way you interact with
           written content through the power of Bionic Reading. Our mission is to
