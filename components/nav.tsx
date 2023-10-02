@@ -3,11 +3,13 @@
 import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
+import { GithubIcon } from "lucide-react";
 
 import Logo from "./logo";
 import { ModeToggle } from "./mode-toggle";
 
 import { cn } from "@/lib/utils";
+import { Button } from "./ui/button";
 
 const Nav = () => {
   const [isAtTop, setIsAtTop] = useState(true);
@@ -82,16 +84,15 @@ const Nav = () => {
         })}
       </div>
       <div className="flex items-center gap-x-3">
-        {pathname === "/" ? (
+        <Button variant="primary" className="hover:opacity-75 rounded-full">
           <a
-            href="/bionic-reading"
-            className="bg-gradient-to-tr from-red-500 to-yellow-500 text-white cursor-pointer flex text-sm items-center dark:text-white hover:bg-white hover:opacity-75 transition h-max w-max py-1 px-3 rounded-xl"
+            className="flex text-white items-center"
+            target="_blank"
+            href="https://github.com/ashcbrd/bionic-reading"
           >
-            <span>Get Started</span>
+            Star on <GithubIcon fill="white" className="ml-1" size="16" />
           </a>
-        ) : (
-          ""
-        )}
+        </Button>
         <ModeToggle />
       </div>
     </div>

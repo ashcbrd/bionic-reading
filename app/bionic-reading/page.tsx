@@ -1,8 +1,10 @@
 "use client";
 
+import { useState, Fragment } from "react";
+import { Loader2 } from "lucide-react";
+
 import Loading from "@/components/loading";
 import { cn } from "@/lib/utils";
-import { useState, Fragment } from "react";
 
 const BionicReadingComponent: React.FC = () => {
   const [inputText, setInputText] = useState<string>("");
@@ -53,53 +55,51 @@ const BionicReadingComponent: React.FC = () => {
   };
 
   return (
-    <>
-      {isLoading && !bionicText ? (
-        <Loading />
-      ) : (
-        <div className="flex w-full justify-center flex-col min-h-screen items-center gap-y-6 h-max">
-          {!bionicText ? (
-            <>
-              <div className="flex flex-col gap-y-3">
-                <p className="w-[800px] text-transparent text-center text-3xl font-bold bg-clip-text bg-gradient-to-tr from-red-500 to-yellow-500">
-                  Boost Your Reading Efficiency with Bionic Reading!
-                </p>
-                <p className="w-[800px] text-center text-xl">
-                  Paste your text and absorb information faster and better!
-                </p>
-              </div>
-              <div className="flex flex-col items-center jusify-center gap-y-4">
-                <textarea
-                  className="dark:bg-[#1b1b1b] backdrop-blur-lg border-orange-400/80 border p-4 rounded-md w-[600px] h-[200px]"
-                  value={inputText}
-                  cols={20}
-                  // @ts-expect-error
-                  onChange={handleInputChange}
-                />
-                <button
-                  onClick={handleConvert}
-                  disabled={!inputText}
-                  className={cn(
-                    "px-4 py-2 bg-gradient-to-tr text-white from-red-500 to-yellow-500 rounded-md w-full",
-                    !inputText && "cursor-not-allowed opacity-75"
-                  )}
-                >
-                  Convert
-                </button>
-              </div>
-            </>
-          ) : (
-            <div
+    <div className="flex w-full justify-center flex-col min-h-screen items-center gap-y-6 h-max">
+      {!bionicText ? (
+        <>
+          <div className="flex flex-col gap-y-3">
+            <p className="w-[800px] text-transparent text-center text-3xl font-bold bg-clip-text bg-gradient-to-tr from-red-500 to-yellow-500">
+              Boost Your Reading Efficiency with Bionic Reading!
+            </p>
+            <p className="w-[800px] text-center text-xl">
+              Paste your text and absorb information faster and better!
+            </p>
+          </div>
+          <div className="flex flex-col items-center jusify-center gap-y-4">
+            <textarea
+              className="dark:bg-[#1b1b1b] backdrop-blur-lg border-orange-400/80 border p-4 rounded-md w-[600px] h-[200px]"
+              value={inputText}
+              cols={20}
+              // @ts-expect-error
+              onChange={handleInputChange}
+            />
+            <button
+              onClick={handleConvert}
+              disabled={!inputText}
               className={cn(
-                "bg-white text-gray-800 w-5/6 p-24 rounded font-[400] text-xl"
+                "px-4 py-2 bg-gradient-to-tr text-white from-red-500 to-yellow-500 rounded-md w-full",
+                !inputText && "cursor-not-allowed opacity-75"
               )}
             >
-              {bionicText}
-            </div>
+              {isLoading && !bionicText ? (
+                <Loader2 className="animate-spin m-auto" />
+              ) : (
+                "Convert"
+              )}
+            </button>
+          </div>
+        </>
+      ) : (
+        <div
+          className={cn(
+            "bg-white text-gray-800 w-5/6 p-24 rounded font-[400] text-xl"
           )}
+        >
+          {bionicText}
         </div>
       )}
-    </>
+    </div>
   );
 };
 

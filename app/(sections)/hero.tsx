@@ -1,4 +1,7 @@
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+
+import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
   return (
@@ -26,28 +29,24 @@ const HeroSection = () => {
           </motion.p>
         </div>
         <div className="gap-y-4 flex flex-col">
-          <motion.p
-            initial={{ x: 50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ delay: 1, duration: 1 }}
-            className="dark:text-white/70"
-          >
-            Stay In the Loop: Subscribe for Exclusive Updates and New Features!
-          </motion.p>
           <motion.div
-            initial={{ x: -50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 1, duration: 1 }}
-            className="flex gap-x-2 px-4"
+            className="flex w-full items-center justify-center"
           >
-            <input
-              type="text"
-              placeholder="Enter email"
-              className="w-full border border-orange-500 dark:border-none dark:bg-white/10 backdrop-blur-md rounded-md p-2"
-            />
-            <button className="text-white bg-gradient-to-tr from-red-500 to-yellow-500 px-3 rounded-md">
-              Subscribe
-            </button>
+            <a href="/bionic-reading" className="flex items-center">
+              <Button
+                variant="primary"
+                className="text-white rounded-full flex gap-x-2 group transition-all duration-200 justify-start"
+              >
+                Get Started
+                <ArrowRight
+                  size="20"
+                  className="group-hover:ml-4 transition-all duration-200"
+                />
+              </Button>
+            </a>
           </motion.div>
         </div>
         <motion.div
