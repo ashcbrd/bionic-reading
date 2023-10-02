@@ -87,7 +87,6 @@ const Nav = () => {
         <Button variant="primary" className="hover:opacity-75 rounded-full">
           <a
             className="flex text-white items-center"
-            target="_blank"
             href="https://github.com/ashcbrd/bionic-reading"
           >
             Star on <GithubIcon fill="white" className="ml-1" size="16" />
