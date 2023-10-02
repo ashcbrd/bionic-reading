@@ -3,7 +3,6 @@
 import { useState, Fragment } from "react";
 import { Loader2 } from "lucide-react";
 
-import Loading from "@/components/loading";
 import { cn } from "@/lib/utils";
 
 const BionicReadingComponent: React.FC = () => {
