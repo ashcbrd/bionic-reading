@@ -78,7 +78,11 @@ const BionicReadingComponent: React.FC = () => {
                 />
                 <button
                   onClick={handleConvert}
-                  className="px-4 py-2 bg-gradient-to-tr text-white from-red-500 to-yellow-500 rounded-md w-full"
+                  disabled={!inputText}
+                  className={cn(
+                    "px-4 py-2 bg-gradient-to-tr text-white from-red-500 to-yellow-500 rounded-md w-full",
+                    !inputText && "cursor-not-allowed opacity-75"
+                  )}
                 >
                   Convert
                 </button>
