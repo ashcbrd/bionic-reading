@@ -31,7 +31,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="relative overflow-x-hidden">
+      <body className="relative w-screen overflow-x-hidden">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

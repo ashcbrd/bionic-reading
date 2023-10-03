@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, Fragment } from "react";
-import { Loader2 } from "lucide-react";
+import { Loader2, ArrowLeft } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 import { cn } from "@/lib/utils";
 
@@ -9,6 +10,8 @@ const BionicReadingComponent: React.FC = () => {
   const [inputText, setInputText] = useState<string>("");
   const [bionicText, setBionicText] = useState<JSX.Element | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  const router = useRouter();
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputText(event.target.value);
@@ -58,11 +61,11 @@ const BionicReadingComponent: React.FC = () => {
       {!bionicText ? (
         <>
           <div className="flex flex-col gap-y-3">
-            <p className="w-[800px] text-transparent text-center text-xl md:text-3xl font-bold bg-clip-text bg-gradient-to-tr from-red-500 to-yellow-500">
+            <p className="md:w-[800px] text-transparent text-center text-xl md:text-3xl font-bold bg-clip-text bg-gradient-to-tr from-red-500 to-yellow-500">
               Boost Your Reading Efficiency
               <br className="block md:hidden" /> with Bionic Reading!
             </p>
-            <p className="w-[800px] text-center text-xs md:text-xl text-stone-300">
+            <p className="md:w-[800px] text-center text-xs md:text-xl text-stone-300">
               Paste your text and absorb <br className="block md:hidden" />{" "}
               information faster and better!
             </p>
@@ -92,12 +95,25 @@ const BionicReadingComponent: React.FC = () => {
           </div>
         </>
       ) : (
-        <div
-          className={cn(
-            "bg-white text-gray-800 w-5/6 p-6 md:p-24 rounded font-[400] md:text-xl"
-          )}
-        >
-          {bionicText}
+        <div className="w-5/6">
+          <button
+            onClick={() => {
+              setInputText("");
+              setIsLoading(false);
+              setBionicText(null);
+            }}
+            className="flex items-center justify-center h-max gap-x-1 pl-2 pr-3 py-2 rounded-md mb-10 hover:text-black hover:bg-white transition"
+          >
+            <ArrowLeft size={20} />
+            Back
+          </button>
+          <div
+            className={cn(
+              "bg-white text-gray-800 p-6 md:p-24 rounded font-[400] md:text-xl"
+            )}
+          >
+            {bionicText}
+          </div>
         </div>
       )}
     </div>

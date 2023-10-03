@@ -29,25 +29,24 @@ const HeroSection = () => {
           </motion.p>
         </div>
         <div className="gap-y-4 flex flex-col">
-          <motion.div
+          <motion.a
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 1, duration: 1 }}
+            href="/bionic-reading"
             className="flex w-full items-center justify-center"
           >
-            <a href="/bionic-reading" className="flex items-center">
-              <Button
-                variant="primary"
-                className="text-white rounded-full flex gap-x-2 group transition-all duration-200 justify-start"
-              >
-                Get Started
-                <ArrowRight
-                  size="20"
-                  className="hidden md:block group-hover:ml-4 transition-all duration-200"
-                />
-              </Button>
-            </a>
-          </motion.div>
+            <Button
+              variant="primary"
+              className="text-white rounded-full flex gap-x-2 group transition-all duration-200 justify-start"
+            >
+              Get Started
+              <ArrowRight
+                size="20"
+                className="hidden md:block group-hover:ml-4 transition-all duration-200"
+              />
+            </Button>
+          </motion.a>
         </div>
         <motion.div
           initial={{ y: 50, opacity: 0 }}
@@ -68,19 +67,22 @@ const HeroSection = () => {
 
 const Card = () => {
   return (
-    <div className="relative px-4 md:px-0">
-      <div className="md:h-[340px] md:w-[640px] z-40 rounded-3xl bg-white border shadow-xl border-orange-400  relative flex items-center justify-center flex-col gap-y-5 p-10">
-        <p className="md:text-2xl tracking-wide text-center text-black font-semibold">
-          &quot;Th<R>e</R> hab<R>it</R> o<R>f</R> read<R>ing</R> i<R>s</R> th
-          <R>e</R> onl<R>y</R> enjoyme<R>nt</R> i<R>n</R> whi<R>ch</R> the
-          <R>re</R> i<R>s</R> n<R>o</R> all<R>oy;</R> i<R>t</R> las<R>ts</R> whe
-          <R>n</R> al<R>l</R> oth<R>er</R> pleas<R>ures</R> fa<R>de.&quot;</R>
-        </p>
-        <i className="text-black text-xs md:text-base"> - Anthony Trollope</i>
-      </div>
+    <div className="overflow-x-hidden md:overflow-visible h-[400px]">
+      <div className="relative px-4 md:px-0">
+        <div className="md:h-[340px] md:w-[640px] z-40 rounded-3xl bg-white border shadow-xl border-orange-400  relative flex items-center justify-center flex-col gap-y-5 p-10">
+          <p className="md:text-2xl tracking-wide text-center text-black font-semibold">
+            &quot;Th<R>e</R> hab<R>it</R> o<R>f</R> read<R>ing</R> i<R>s</R> th
+            <R>e</R> onl<R>y</R> enjoyme<R>nt</R> i<R>n</R> whi<R>ch</R> the
+            <R>re</R> i<R>s</R> n<R>o</R> all<R>oy;</R> i<R>t</R> las<R>ts</R>{" "}
+            whe
+            <R>n</R> al<R>l</R> oth<R>er</R> pleas<R>ures</R> fa<R>de.&quot;</R>
+          </p>
+          <i className="text-black text-xs md:text-base"> - Anthony Trollope</i>
+        </div>
 
-      <div className="z-0 absolute top-0 left-0 bg-gradient-to-r from-red-500 to-yellow-500 shadow-lg h-[80%] w-[80%] rounded-xl -translate-x-[100px] rotate-[-10deg] translate-y-20" />
-      <div className="z-0 absolute top-0 right-0 bg-gradient-to-r from-orange-500 to-yellow-500  shadow-lg h-[80%] w-[80%] rounded-xl translate-x-[100px] rotate-[10deg] translate-y-20" />
+        <div className="z-0 absolute top-0 left-0 bg-gradient-to-r from-red-500 to-yellow-500 shadow-lg h-[80%] w-[80%] rounded-xl -translate-x-[100px] rotate-[-10deg] translate-y-20" />
+        <div className="z-0 absolute top-0 right-0 bg-gradient-to-r from-orange-500 to-yellow-500  shadow-lg h-[80%] w-[80%] rounded-xl translate-x-[100px] rotate-[10deg] translate-y-20" />
+      </div>
     </div>
   );
 };

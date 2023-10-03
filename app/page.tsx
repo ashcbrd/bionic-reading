@@ -7,7 +7,7 @@ import HeroSection from "./(sections)/hero";
 
 export default function Home() {
   return (
-    <div className="h-max w-screen relative py-24">
+    <div className="h-max w-full relative py-24">
       <HeroSection />
       <AboutSection />
       <GuideSection />
