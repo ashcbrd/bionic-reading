@@ -38,19 +38,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="hidden md:block">
-            <Nav />
-            <div>{children}</div>
-            <Footer />
-          </div>
-          <div className="flex flex-col gap-y-10 md:hidden px-14 justify-center items-center w-screen h-screen">
-            <Image src="/logo.png" width={200} height={200} alt="logo" />
-
-            <p className="font-bold text-xl tracking-wider text-transparent bg-clip-text bg-gradient-to-tr from-red-500 to-yellow-500">
-              Apologies, our website isn&apos;t fully mobile-friendly yet. For
-              the best experience, try it on desktop or laptop.
-            </p>
-          </div>
+          <Nav />
+          <div>{children}</div>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

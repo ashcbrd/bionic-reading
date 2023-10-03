@@ -1,8 +1,9 @@
 type LogoType = {
   size: number;
+  className: string;
 };
 
-const Logo = ({ size }: LogoType) => {
+const Logo = ({ size, className }: LogoType) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -10,6 +11,7 @@ const Logo = ({ size }: LogoType) => {
       viewBox="0 0 400 400"
       width={size}
       height={size}
+      className={className}
     >
       <defs>
         <style>{`.cls-1{fill:url(#linear-gradient);}`}</style>

@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
   return (
-    <div className="h-max pb-32">
+    <div className="h-screen md:h-max pb-32">
       <section
         id="hero"
         className="w-full h-max flex items-center justify-center flex-col gap-y-10 mt-12 z-10 relative"
@@ -15,7 +15,7 @@ const HeroSection = () => {
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1 }}
-            className="font-bold text-7xl text-transparent bg-clip-text bg-gradient-to-tr from-red-500 to-yellow-500"
+            className="font-bold text-3xl md:text-7xl text-transparent bg-clip-text bg-gradient-to-tr from-red-500 to-yellow-500"
           >
             Empower Your Mind
           </motion.p>
@@ -23,7 +23,7 @@ const HeroSection = () => {
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.7, duration: 1 }}
-            className="text-4xl text-primary dark:text-stone-100 tracking-wide font-semibold"
+            className="text-md md:text-4xl text-primary dark:text-stone-100 tracking-wide font-semibold"
           >
             Bionic Reading for a Digital Age
           </motion.p>
@@ -43,7 +43,7 @@ const HeroSection = () => {
                 Get Started
                 <ArrowRight
                   size="20"
-                  className="group-hover:ml-4 transition-all duration-200"
+                  className="hidden md:block group-hover:ml-4 transition-all duration-200"
                 />
               </Button>
             </a>
@@ -68,17 +68,17 @@ const HeroSection = () => {
 
 const Card = () => {
   return (
-    <div className="relative">
-      <div className="h-[340px] w-[640px] z-40 rounded-3xl bg-white border shadow-xl border-orange-400  relative flex items-center justify-center flex-col gap-y-5 p-10">
-        <p className="text-2xl tracking-wide text-center text-black font-semibold">
+    <div className="relative px-4 md:px-0">
+      <div className="md:h-[340px] md:w-[640px] z-40 rounded-3xl bg-white border shadow-xl border-orange-400  relative flex items-center justify-center flex-col gap-y-5 p-10">
+        <p className="md:text-2xl tracking-wide text-center text-black font-semibold">
           &quot;Th<R>e</R> hab<R>it</R> o<R>f</R> read<R>ing</R> i<R>s</R> th
           <R>e</R> onl<R>y</R> enjoyme<R>nt</R> i<R>n</R> whi<R>ch</R> the
           <R>re</R> i<R>s</R> n<R>o</R> all<R>oy;</R> i<R>t</R> las<R>ts</R> whe
           <R>n</R> al<R>l</R> oth<R>er</R> pleas<R>ures</R> fa<R>de.&quot;</R>
         </p>
-        <i className="text-black"> - Anthony Trollope</i>
+        <i className="text-black text-xs md:text-base"> - Anthony Trollope</i>
       </div>
-      <div className="h-[340px] w-[640px] z-30 border border-orange-500/30 rounded-3xl bg-[#555]/30 backdrop-blur-xl absolute top-0" />
+
       <div className="z-0 absolute top-0 left-0 bg-gradient-to-r from-red-500 to-yellow-500 shadow-lg h-[80%] w-[80%] rounded-xl -translate-x-[100px] rotate-[-10deg] translate-y-20" />
       <div className="z-0 absolute top-0 right-0 bg-gradient-to-r from-orange-500 to-yellow-500  shadow-lg h-[80%] w-[80%] rounded-xl translate-x-[100px] rotate-[10deg] translate-y-20" />
     </div>

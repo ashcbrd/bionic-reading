@@ -58,16 +58,18 @@ const BionicReadingComponent: React.FC = () => {
       {!bionicText ? (
         <>
           <div className="flex flex-col gap-y-3">
-            <p className="w-[800px] text-transparent text-center text-3xl font-bold bg-clip-text bg-gradient-to-tr from-red-500 to-yellow-500">
-              Boost Your Reading Efficiency with Bionic Reading!
+            <p className="w-[800px] text-transparent text-center text-xl md:text-3xl font-bold bg-clip-text bg-gradient-to-tr from-red-500 to-yellow-500">
+              Boost Your Reading Efficiency
+              <br className="block md:hidden" /> with Bionic Reading!
             </p>
-            <p className="w-[800px] text-center text-xl">
-              Paste your text and absorb information faster and better!
+            <p className="w-[800px] text-center text-xs md:text-xl text-stone-300">
+              Paste your text and absorb <br className="block md:hidden" />{" "}
+              information faster and better!
             </p>
           </div>
           <div className="flex flex-col items-center jusify-center gap-y-4">
             <textarea
-              className="dark:bg-[#1b1b1b] backdrop-blur-lg border-orange-400/80 border p-4 rounded-md w-[600px] h-[200px]"
+              className="dark:bg-[#1b1b1b] backdrop-blur-lg border-orange-400/80 border p-4 rounded-md w-[280px] md:w-[600px] min-h-[120px] md:min-h-[200px]"
               value={inputText}
               cols={20}
               // @ts-expect-error
@@ -77,7 +79,7 @@ const BionicReadingComponent: React.FC = () => {
               onClick={handleConvert}
               disabled={!inputText}
               className={cn(
-                "px-4 py-2 bg-gradient-to-tr text-white from-red-500 to-yellow-500 rounded-md w-full",
+                "px-4 py-2 bg-gradient-to-tr text-white text-xs md:text-base from-red-500 to-yellow-500 rounded-md w-full",
                 !inputText && "cursor-not-allowed opacity-75"
               )}
             >
@@ -92,7 +94,7 @@ const BionicReadingComponent: React.FC = () => {
       ) : (
         <div
           className={cn(
-            "bg-white text-gray-800 w-5/6 p-24 rounded font-[400] text-xl"
+            "bg-white text-gray-800 w-5/6 p-6 md:p-24 rounded font-[400] md:text-xl"
           )}
         >
           {bionicText}
