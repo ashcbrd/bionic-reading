@@ -25,10 +25,19 @@ const GuideSection = () => {
         <p className="text-sm md:text-xl md:leading-8 text-primary dark:text-stone-200">
           3. Click the{" "}
           <span className="font-semibold text-orange-400">Convert</span> button
-          and application will display the bionic texts.
+          to display the bionic texts.
         </p>
         <GuideImage src={"/guide2.png"} />
+        <p className="text-sm md:text-xl md:leading-8 text-primary dark:text-stone-200">
+          3. Click the settings button to configure the background color, font
+          color, and font size of your choice.
+        </p>
+        <GuideImage src={"/guide3.png"} />
       </div>
+      <p className="text-sm md:text-xl md:leading-8 text-primary dark:text-stone-200">
+        3. Click the settings button to configure the background color, font
+        color, and font size of your choice.
+      </p>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { Toaster } from "sonner";
 
 import Nav from "@/components/nav";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -38,6 +38,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Toaster />
           <Nav />
           <div>{children}</div>
           <Footer />

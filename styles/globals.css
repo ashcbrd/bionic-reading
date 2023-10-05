@@ -10,6 +10,26 @@
   scroll-behavior: smooth !important;
 }
 
+.color-settings {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 26px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  border-radius: 100%;
+  cursor: pointer;
+}
+.color-settings::-webkit-color-swatch {
+  border-radius: 100%;
+  border: none;
+}
+.color-settings:-moz-color-swatch {
+  border-radius: 100%;
+  border: none;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

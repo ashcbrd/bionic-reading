@@ -1,15 +1,31 @@
 "use client";
 
 import { useState, Fragment } from "react";
-import { Loader2, ArrowLeft } from "lucide-react";
+import { Loader2, ArrowLeft, Settings2, FileDown } from "lucide-react";
 import { useRouter } from "next/navigation";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
+import { toast } from "sonner";
 
 import { cn } from "@/lib/utils";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { Button } from "@/components/ui/button";
 
 const BionicReadingComponent: React.FC = () => {
   const [inputText, setInputText] = useState<string>("");
   const [bionicText, setBionicText] = useState<JSX.Element | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [settings, setSettings] = useState({
+    fontColor: "#000000",
+    fontSize: 20,
+    backgroundColor: "#ffffff",
+    letterSpacing: "",
+    lineSpacing: "",
+  });
 
   const router = useRouter();
 
@@ -56,6 +72,33 @@ const BionicReadingComponent: React.FC = () => {
     if (bionicText) setIsLoading(false);
   };
 
+  const handleDownload = (type: string) => {
+    const divElement = document.getElementById("bionic-text");
+
+    if (divElement) {
+      html2canvas(divElement).then((canvas) => {
+        const imgData = canvas.toDataURL("image/png");
+        if (type === "png") {
+          const link = document.createElement("a");
+          link.href = imgData;
+          link.download = "bionic_text.png";
+          link.click();
+        }
+        if (type === "pdf") {
+          const pdf = new jsPDF("p", "mm", "a4");
+          const width = pdf.internal.pageSize.getWidth();
+          const height = (canvas.height * width) / canvas.width;
+
+          pdf.addImage(imgData, "PNG", 0, 0, width, height);
+          pdf.save("bionic_text.pdf");
+        }
+      });
+    }
+  };
+
+  const { fontColor, fontSize, backgroundColor, lineSpacing, letterSpacing } =
+    settings;
+
   return (
     <div className="flex w-full justify-center flex-col min-h-screen items-center gap-y-6 h-max">
       {!bionicText ? (
@@ -96,26 +139,122 @@ const BionicReadingComponent: React.FC = () => {
         </>
       ) : (
         <div className="w-5/6 py-40">
-          <button
-            onClick={() => {
-              setInputText("");
-              setIsLoading(false);
-              setBionicText(null);
-            }}
-            className="flex items-center justify-center h-max gap-x-1 pl-2 pr-3 py-2 rounded-md mb-10 hover:text-black hover:bg-white transition"
-          >
-            <ArrowLeft size={20} />
-            Back
-          </button>
+          <div className="flex justify-between items-center pb-10">
+            <Button
+              variant="ghost"
+              onClick={() => {
+                setInputText("");
+                setIsLoading(false);
+                setBionicText(null);
+              }}
+            >
+              <ArrowLeft size={20} />
+              Back
+            </Button>
+            <div className="flex gap-x-2 bg-white/10 items-center justify-center rounded-md pl-2 pr-6 py-2">
+              <Popover>
+                <PopoverTrigger>
+                  <Button variant="ghost">
+                    <Settings2 />
+                  </Button>
+                </PopoverTrigger>
+                <PopoverContent className="w-max" align="end">
+                  <Settings
+                    type="color"
+                    label="Background Color"
+                    value={backgroundColor}
+                    onChange={(e) =>
+                      setSettings((prev) => ({
+                        ...prev,
+                        backgroundColor: e.target.value,
+                      }))
+                    }
+                  />
+
+                  <Settings
+                    type="color"
+                    label="Font Color"
+                    value={fontColor}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                      setSettings((prev) => ({
+                        ...prev,
+                        fontColor: e.target.value,
+                      }))
+                    }
+                  />
+                  <Settings
+                    type="number"
+                    label="Font Size"
+                    value={fontSize}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                      //@ts-expect-error
+                      setSettings((prev) => ({
+                        ...prev,
+                        fontSize: e.target.value,
+                      }))
+                    }
+                  />
+                </PopoverContent>
+              </Popover>
+              <Popover>
+                <PopoverTrigger>
+                  <FileDown />
+                </PopoverTrigger>
+                <PopoverContent
+                  className="w-max flex gap-x-3 items-center"
+                  align="end"
+                >
+                  <Button variant="ghost" onClick={() => handleDownload("pdf")}>
+                    .pdf
+                  </Button>
+                  <Button variant="ghost" onClick={() => handleDownload("png")}>
+                    .png
+                  </Button>
+                </PopoverContent>
+              </Popover>
+            </div>
+          </div>
           <div
-            className={cn(
-              "bg-white text-gray-800 p-6 md:p-24 rounded font-[400] md:text-xl"
-            )}
+            id="bionic-text"
+            style={{
+              backgroundColor: backgroundColor,
+              color: fontColor,
+              fontSize: fontSize + "px",
+            }}
+            className="text-gray-800 p-6 md:p-24 rounded font-[400]"
           >
             {bionicText}
           </div>
         </div>
       )}
+    </div>
+  );
+};
+
+type SettingsType = {
+  onChange: React.ChangeEventHandler<HTMLInputElement>;
+  label: string;
+  type: string;
+  value?: string | number;
+};
+
+const Settings = ({ onChange, label, value, type }: SettingsType) => {
+  return (
+    <div className="flex items-center w-[200px] gap-x-2">
+      <label htmlFor="settings">{label}</label>
+      <div className="flex-grow" />
+      <input
+        id="settings"
+        className={
+          type === "number"
+            ? " rounded-md pl-2 py-1 w-14 flex bg-transparent border border-white/50"
+            : "color-settings"
+        }
+        type={type}
+        value={value}
+        onChange={onChange}
+      />
+      {type === "number" && "px"}
     </div>
   );
 };
