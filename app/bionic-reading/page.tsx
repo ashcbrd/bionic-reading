@@ -65,14 +65,14 @@ const BionicReadingComponent: React.FC = () => {
               Boost Your Reading Efficiency
               <br className="block md:hidden" /> with Bionic Reading!
             </p>
-            <p className="md:w-[800px] text-center text-xs md:text-xl text-stone-300">
+            <p className="md:w-[800px] text-center text-xs md:text-xl dark:text-stone-300">
               Paste your text and absorb <br className="block md:hidden" />{" "}
               information faster and better!
             </p>
           </div>
           <div className="flex flex-col items-center jusify-center gap-y-4">
             <textarea
-              className="dark:bg-[#1b1b1b] backdrop-blur-lg border-orange-400/80 border p-4 rounded-md w-[280px] md:w-[600px] min-h-[120px] md:min-h-[200px]"
+              className="text-sm md:text-base dark:bg-[#1b1b1b] backdrop-blur-lg border-orange-400/80 border p-4 rounded-md w-[280px] md:w-[600px] min-h-[120px] md:min-h-[200px]"
               value={inputText}
               cols={20}
               // @ts-expect-error
@@ -95,7 +95,7 @@ const BionicReadingComponent: React.FC = () => {
           </div>
         </>
       ) : (
-        <div className="w-5/6">
+        <div className="w-5/6 py-40">
           <button
             onClick={() => {
               setInputText("");
