@@ -8,9 +8,9 @@ const HeroSection = () => {
     <div className="h-screen md:h-max pb-32">
       <section
         id="hero"
-        className="w-full h-max flex items-center justify-center flex-col gap-y-10 mt-12 z-10 relative"
+        className="w-full h-max flex items-center justify-center flex-col gap-y-10 z-10 relative"
       >
-        <div className="flex flex-col justify-center items-center gap-y-2">
+        <div className="flex flex-col justify-center items-center gap-y-2 mt-32">
           <motion.p
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
